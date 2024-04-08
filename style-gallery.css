@@ -1,0 +1,65 @@
+body {
+    background: #F7F9FC;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    color: #575F7D;
+}
+
+.gallery-intro {
+    margin: 40px 0;
+}
+
+.gallery-intro h1 {
+    font-size: 30px;
+    color: #575F7D;
+    margin-bottom: 20px;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+/*I googled how to use flex, calc and transform. Some extra things for smoothness of design! - Camilla*/
+.gallery-item {
+    flex: 0 0 calc(33.333% - 20px);
+    margin: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item p {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 1200px) {
+    .gallery-item {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 0 0 calc(100% - 20px);
+    }
+}
